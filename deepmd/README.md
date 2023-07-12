@@ -1,5 +1,21 @@
 # Optimizing deepmd hyperparameters on Summit
 
+`deepmd-tuner.py` is an evolutionary algorithm (EA) that tunes the 
+hyperparameters for [DeepMD](https://github.com/deepmodeling/deepmd-kit), a molecular dynamics deep learner, and is
+multiobjective in that it minimizes the loss error for molecular dynamic force 
+and 
+energy 
+potentials. It's 
+intended 
+to run on a modestly sized cluster or supercomputer with nodes that have 
+sufficient computational resources, such as GPUs, for training DeepMD DL 
+models. During a 
+run, `deepmd-tuner.py` will distribute individuals to  
+resources for parallel fitness evaluations.
+
+This software relies on [LEAP](https://github.com/AureumChaos/LEAP) for the 
+EA implementation that, in turn, uses [Dask](https://distributed.dask.org/en/stable/) to manage the distributed, 
+parallel fitness evaluations.
 
 ## Directories
 
