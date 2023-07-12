@@ -17,7 +17,7 @@ This contains the supplementary code, notebooks, and data associated with our
 * `deepmd-tuner.py` -- main executable for experiments
 * `individual.py` -- `DeepMDIndividual` is a subclass of LEAP 
   `DistributeIndividual` that overrides `evaluate()`
-* `phenotype.py` -- defines the genes and their respective ranges for intial 
+* `phenotype.py` -- defines the genes and their respective ranges for initial 
   random individuals
 * `problem.py` -- LEAP `Problem` subclass used to implement fitness 
   evaluation for `DeepMDIndividual`s
