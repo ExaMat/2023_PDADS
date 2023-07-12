@@ -1,7 +1,15 @@
 # Optimizing deepmd hyperparameters on Summit
 
 
-## File and directory descriptions
+## Directories
+
+* `config/` -- YAML config files used for the runs
+* `notebooks/` -- Jupyter notebooks used for paper analytics
+* `scripts/` -- Summit batch submission and visualization scripts
+* `templates/` -- JSON file for DeepMD input used to set hyperparameters for 
+  evaluations
+
+## Files
 
 * `decoder.py` -- This defines `DeepMDDecoder`, which decodes the "genomes" of real-valued numbers into "phenomes" of DeePMD hyperparameters.
 * `deepmd-tuner.py` -- The main script that drives the evolutionary algorithm.
