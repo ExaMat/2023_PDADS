@@ -1,0 +1,4 @@
+# For doing debugging runs on Summit
+ea:
+    max_generations: 2
+

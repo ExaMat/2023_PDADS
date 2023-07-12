@@ -1,0 +1,39 @@
+# General configuration options
+verbose : True
+
+# ID uniquely identifying this run
+job_id : 0
+
+# Top-level directory in which we'll be running; usually overriden in a
+# follow-on config YAML file, such as summit.yaml or desktop.yaml.
+run_dir : ???
+
+# This is the deepmd-kit JSON input template file we will use; overriden in a
+# subsequent config YAML file. This should be a fully-qualified path to the
+# file to avoid ambiguity.
+input_template : ???
+
+# Set in summit.yaml
+#distributed: # dask parameters
+#  scheduler_file: scheduler_file.json
+#  scheduler_timeout: 30
+
+ea: # evolutionary algorithm parameters
+  init_pop_size: ???
+  pop_size: 25
+  max_generations: ???
+  # Optional RNG seed; there is a separate seed for deepmd-kit that's set and
+  # recorded in the generated input.json files; this is exclusively for the
+  # EA.
+#  seed: 123245
+  # Where to write out evaluated individuals
+  ind_csv_file : individuals.csv
+  # Where to write out snapshots of the population
+  pop_csv_file : pop.csv
+  # How often do we want to do a snapshot of the population; really only
+  # relevant for async approaches
+  update_interval : 1
+
+  # How long do we give the training subprocess to run?  If the it takes longer
+  # than this time, abort the training.  This is in minutes.
+  training_timeout: 120

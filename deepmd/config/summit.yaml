@@ -1,0 +1,27 @@
+# Summit specific configuration parameters go here
+#
+# These would be things like specifying data directories and output.
+#
+job_id : ${oc.env:LSB_JOBID}
+
+# Top-level directory in which we'll be running; usually overriden in a
+# follow-on config YAML file, such as summit.yaml or desktop.yaml.
+run_dir : ${oc.env:RUN_DIR}
+
+# Template for JSON input file we will be using
+input_template : /gpfs/alpine/proj-shared/chm187/mcoletti/deepmd_on_Summit/deepmd/templates/deepmd_input_alcl66.json
+
+distributed: # dask parameters
+  scheduler_file: ${oc.env:SCHEDULER_FILE}
+  scheduler_timeout: 60
+
+ea: # evolutionary algorithm parameters
+  # Where to write out evaluated individuals
+  ind_csv_file : ${job_id}_individuals.csv
+  # Where to write out snapshots of the population
+  pop_csv_file : ${job_id}_pop.csv
+
+  init_pop_size : ${oc.env:nWORKERS} # ensure all workers are busy at start
+  pop_size: ${oc.env:nWORKERS}
+
+  max_generations: 6

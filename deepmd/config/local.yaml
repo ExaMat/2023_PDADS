@@ -1,0 +1,22 @@
+# Configuration for running locally
+#
+job_id : 999
+
+# Top-level directory in which we'll be running; usually overriden in a
+# follow-on config YAML file, such as summit.yaml or desktop.yaml.
+run_dir : /tmp
+
+# Template for JSON input file we will be using
+input_template : /Users/may/Projects/deepmd_on_Summit/deepmd/templates/deepmd_input_alcl66.json
+
+
+ea: # evolutionary algorithm parameters
+  # Where to write out evaluated individuals
+  ind_csv_file : individuals.csv
+  # Where to write out snapshots of the population
+  pop_csv_file : pop.csv
+
+  init_pop_size : 12 # ensure all workers are busy at start
+  pop_size: 12
+
+  max_generations: 8

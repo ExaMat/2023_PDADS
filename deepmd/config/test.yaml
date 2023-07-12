@@ -1,0 +1,2 @@
+# For doing debugging runs on Summit
+test : True
