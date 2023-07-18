@@ -5,9 +5,6 @@ R=readtable(filename);
 T=removevars(R,{'job','generation','uuid','birth_id','start_eval_time','stop_eval_time'});
 
 energy=table2array(T(:, 8));force=table2array(T(:,9));
-% binEdgesForce = [0 0.05 0.6];binEdgesEnergy = [0 0.004 0.01];
-% bins_force={'good forces', 'bad forces'};
-% bins_energy={'good energy', 'bad energy'};
 
 a=energy<0.004;b=force<0.04;both_l=a&b;
 accuracy = categorical(both_l,[0 1],{'inaccurate' 'accurate'});
